@@ -1,0 +1,25 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+.weektable {
+    width: 100%;
+    th {
+        width: 14%;
+    }
+
+    td {
+        width: 14%;
+        vertical-align:top;
+        height:75px;
+    }
+}
+
+.border {
+    border: solid;
+}
