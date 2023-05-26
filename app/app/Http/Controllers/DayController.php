@@ -16,7 +16,10 @@ class DayController extends Controller
 
 
         if (is_null($day)) {
-            return redirect(route('home'))->with('danger', 'そんな日はない！');
+            \Session::flash('err_msg', 'データがありません');
+            // return redirect(route('home'));
+            // return redirect(route('home2'))->with('danger', 'そんな日はない！');
+            // return redirect(route('home2'));
         }
 
         // dd($day);

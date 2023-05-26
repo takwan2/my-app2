@@ -1,25 +1,18 @@
-// Fonts
-@import url('https://fonts.bunny.net/css?family=Nunito');
-
-// Variables
-@import 'variables';
-
-// Bootstrap
-@import 'bootstrap/scss/bootstrap';
-
-.weektable {
-    width: 100%;
-    th {
-        width: 14%;
-    }
-
-    td {
-        width: 14%;
-        vertical-align:top;
-        height:75px;
-    }
+td.fc-day-sat {
+    background-color: #eaf4ff;
+}
+td.fc-day-sun {
+    background-color: #ffeaea;
 }
 
-.border {
-    border: solid;
+.fc-daygrid-day-number {
+    color: black !important;
+}
+
+.fc-col-header-cell-cushion {
+    color: black !important;
+}
+
+.gray {
+    background-color: #c0c0c0 !important;
 }

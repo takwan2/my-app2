@@ -11,16 +11,6 @@ use App\Models\LatestShift;
 
 class AdminShiftController extends Controller
 {
-    public function showShift()
-    {
-        $dt = Carbon::now();
-
-        $date = $dt->startOfWeek();
-
-        return view('shift.shift', [
-            'date' => $date,
-        ]);
-    }
 
     public function showShiftDay($date)
     {
@@ -30,9 +20,24 @@ class AdminShiftController extends Controller
             return redirect(route('shift'))->with('danger', 'そんな日はない！');
         }
 
+        $userData = [];
+        $users = $day->users;
+
+        foreach($users as $user) {
+            // dd($user->pivot->start_time);
+            $userData[] = ['id' => $user->id, 'name' => $user->nickname, 
+            'start_time' => $user->pivot->start_time, 'end_time' => $user->pivot->end_time,];
+            // dd(['id' => $user->id, 'name' => $user->nickname, 
+            // 'start_time' => $user->pivot->start_time, 'end_time' => $user->pivot->end_time,]);
+            // dd($pivot);
+        }
+
+        // dd(json_encode($userData));
+
         return view('shift.edit', [
             'day' => $day,
             'date' => $date,
+            'users' => json_encode($userData)
         ]);
     }
 

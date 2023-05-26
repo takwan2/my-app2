@@ -1,5 +1,4 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
     <div class="navbar-brand">シフト管理</div>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav me-auto">
@@ -30,12 +29,10 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink2">
                         <li><a class="dropdown-item" href="{{ route('users') }}">ユーザー一覧</a></li>
-                        <li><a class="dropdown-item" href="{{ route('shift') }}">シフト編集</a></li>
                     </ul>
                 </li>
                 @endif
             @endforeach
         </ul>
     </div>
-  </div>
 </nav>
